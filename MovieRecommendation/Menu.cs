@@ -28,6 +28,8 @@ namespace MovieRecommendation
 
             PrintMovies();
             //LINQMovieReader(search);
+
+            Console.ReadKey();
         }
 
         private void MovieReader(string search)
@@ -122,6 +124,7 @@ namespace MovieRecommendation
         {
             foreach (Movie movie in movies)
             {
+                //This solution for if a movie lack a rating is very ugly, and can lead to problems in the future, fix when possible
                 try
                 {
                     Console.WriteLine("ID:{0} Title:{1} Genres:{2} Ratings:{3}", movie.MovieID, movie.Title, movie.Genre, Math.Round(movie.GetAverageRating(), 2));
@@ -133,5 +136,6 @@ namespace MovieRecommendation
                 }
             }
         }
+
     }
 }
